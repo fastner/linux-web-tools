@@ -3,6 +3,7 @@
 JS_ENGINE="iojs"
 JS_VERSION="v3.0.0"
 JS_PLATFORM="linux"
+JS_PLATFORM2="darwin"
 JS_ARCH="x64"
 
 abspath() {                                               
@@ -24,5 +25,8 @@ pushd ${WORKDIR}/bin > /dev/null
 
 ${JSLINKER} --engine $JS_ENGINE --version $JS_VERSION --platform $JS_PLATFORM --arch $JS_ARCH --npm uglify-js --main bin/uglifyjs
 ${JSLINKER} --engine $JS_ENGINE --version $JS_VERSION --platform $JS_PLATFORM --arch $JS_ARCH --npm clean-css --main bin/cleancss
+
+${JSLINKER} --engine $JS_ENGINE --version $JS_VERSION --platform $JS_PLATFORM2 --arch $JS_ARCH --npm uglify-js --main bin/uglifyjs
+${JSLINKER} --engine $JS_ENGINE --version $JS_VERSION --platform $JS_PLATFORM2 --arch $JS_ARCH --npm clean-css --main bin/cleancss
 
 popd > /dev/null
